@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block main%}
+
+<div class="container-fluid">
+    <div class="container contact-section">
+        <div class="row text-center">
+            <div class="col">
+                <h1>Contact Us</h1>
+            </div>
+        </div>
+        <div class="row d-flex my-2 g-4 py-3">
+            <div class="col-sm-6 my-2 shadow py-3 ">
+                <h2>Get in Touch</h2>
+                {% if messages %}
+                {% for m in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+
+                    {{m}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+                {% endif %}
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="my-2">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="name">
+                    </div>
+                    <div class="my-2">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="email">
+                    </div>
+                    <div class="my-2">
+                        <label for="phone">Phone:</label>
+                        <input type="number" class="form-control" name="contactno" id="phone" placeholder="phone">
+                    </div>
+                    <div class="my-2">
+                        <label for="sub">Subject</label>
+                        <input type="text" class="form-control" name="subject" id="subject" placeholder="subject">
+                    </div>
+                    <div class="my-2">
+                        <label for="message">Message:</label>
+                        <textarea name="message" class="form-control" id="message" placeholder="Message"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success">Send Message</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-md-6 mb-4">
+            <h2 class="fw-bold mb-3">Get in Touch</h2>
+            <p class="text-muted">We’d love to hear from you. Reach out to us for any queries, support, or collaborations.</p>
+            
+            <ul class="list-unstyled mt-4">
+                <li class="mb-3">
+                    <i class="fas fa-map-marker-alt me-2 text-primary"></i>
+                    <strong>Address:</strong> Vidya Prakash Mandir, Meerut, Uttar Pradesh, India
+                </li>
+                <li class="mb-3">
+                    <i class="fas fa-phone-alt me-2 text-primary"></i>
+                    <strong>Phone:</strong> +91 3409 9873
+                </li>
+                <li class="mb-3">
+                    <i class="fas fa-envelope me-2 text-primary"></i>
+                    <strong>Email:</strong> support@vidyaprakashamandir.com
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

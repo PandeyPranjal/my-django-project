@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+
+<div class="contact-page">
+    <div class="overlay">
+        <div class="container my-5">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-4 contact-card shadow-lg">
+                    <h1 class="text-center mb-4">Welcome User!</h1>
+
+                    {% if messages %}
+                    {% for m in messages %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{m}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <div class="my-3">
+                            <label for="name" class="form-label">User Name</label>
+                            <input type="text" class="form-control" name="username" id="name" placeholder="Enter your username" required>
+                        </div>
+                        <div class="my-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" required>
+                        </div>
+                        <div class="my-3 text-center">
+                            <button type="submit" class="btn btn-success w-100">Sign In</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

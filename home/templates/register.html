@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+
+<div class="register-page">
+    <div class="overlay">
+        <div class="container my-2">
+            <div class="row text-center text-white my-5">
+                <div class="col">
+                    <h1>Create Account</h1>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center my-4 g-4">
+                
+                <!-- Registration Form -->
+                <div class="col-sm-6 register-card shadow ">
+                    <h2 class="text-center my-3">Register Now</h2>
+                    {% if messages %}
+                    {% for m in messages %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{m}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <div class="my-2">
+                            <label for="n">Name:</label>
+                            <input type="text" class="form-control" name="name" id="n" placeholder="name" required>
+                        </div>
+                        <div class="my-2">
+                            <label for="em">Email:</label>
+                            <input type="email" class="form-control" name="email" id="em" placeholder="email" required>
+                        </div>
+                        <div class="my-2">
+                            <label for="cn">Contact No</label>
+                            <input type="number" class="form-control" name="contactno" id="cn" placeholder="phone" required>
+                        </div>
+                        <div class="my-2">
+                            <label for="pass">Password:</label>
+                            <input type="password" class="form-control" name="password" id="pass" placeholder="password" required>
+                        </div>
+                        <div class="my-2">
+                            <label for="cpass">Confirm Password:</label>
+                            <input type="password" class="form-control" name="cpassword" id="cpass" placeholder="Confirm Password" required>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success my-3">Register</button>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

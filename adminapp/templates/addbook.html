@@ -1,0 +1,68 @@
+{% extends 'adminbase.html'%}
+{% load static %}
+{% block admin %}
+<h2>Add Book</h2>
+<div class="row">
+    <div class="col-sm-8 mx-auto">
+        <div class="card p-4 ">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="title" class="form-label">Book Title</label>
+                    <input type="text" name="title" class="form-control" id="title" />
+
+                </div>
+                <div class="mb-3">
+                    <label for="auth" class="form-label">Author</label>
+                    <input name="author" id="auth" class="form-control" />
+
+                </div>
+                <div class="mb-3">
+                    <label for="cat" class="form-label">Select Category</label>
+            
+                    <select name="category" id="cat" class="form-control">
+                        <option value="" select disabled>Select Category</option>
+                        {% for c in cats %}
+                        <option value="{{c.id}}">{{c.name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="desc" class="form-label">Description</label>
+                    <textarea  name="description" id="desc" class="form-control" ></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="op" class="form-label">original price</label>
+                    <input type="number" name="original_price" step="0.01" id="op" class="form-control" >
+                </div>
+                
+                <div class="mb-3">
+                    <label for="p" class="form-label">Price</label>
+                    <input type="number" name="price" step="0.01" id="p" class="form-control" >
+                </div>
+                <div class="mb-3">
+                    <label for="date" class="form-label">Published Date</label>
+                    <input type="date" name="published_date" id="date" class="form-control" >
+                </div>
+                <div class="mb-3">
+                    <label for="lang" class="form-label">Language</label>
+                    <input type="text" name="language" id="date" class="form-control" >
+                </div>
+                <div class="mb-3">
+                    <label for="ci" class="form-label">Cover Image</label>
+                    <input type="file" name="cover_image" id="ci" class="form-control" >
+                </div>
+                <div class="mb-3">
+                    <label for="st" class="form-label">Stock</label>
+                    <input type="number" name="stock" id="st" class="form-control" >
+                </div>
+
+                <!-- button  -->
+                <div class="text-center p-2">
+                    <button class="btn btn-success" type="submit"> Add Book</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

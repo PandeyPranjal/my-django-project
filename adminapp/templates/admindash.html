@@ -1,0 +1,62 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block admin %}
+<style>
+    .aa{
+        background-color: aliceblue;
+    }
+    .aa:hover{
+        background-color: rgb(147, 75, 163);
+    }
+</style>
+    <h3 class="text-center">Admin Dashboard</h3>
+    <br>
+    <div class="row">
+        <div class="col-sm-3 mb-5 ">
+            <div class="card p-3 shadow border-radius-20  aa">
+                <div class="text-center">
+                    <h5>Users:</h5><br>
+                    <h3>{{user_count}}</h3>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-sm-3">
+            <div class="card p-3 shadow border-radius-20 aa">
+                <div class="text-center">
+                    <h5>Orders:</h5><br>
+                    <h3>{{order_count}}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 mb-5">
+            <div class="card p-3 shadow border-radius-20 aa">
+                <div class="text-center">
+                    <h5>Books:</h5><br>
+                    <h3>{{book_count}}</h3>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-sm-3">
+            <div class="card p-3 shadow border-radius-20  aa" >
+                <div class="text-center">
+                    <h5>Categories:</h5><br>
+                    <h3>{{cat_count}}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8"><div style="width: 60%; margin: auto;">
+  <canvas id="myBarChart"></canvas>
+</div>
+</div>
+        <div class="col-sm-3">
+            <div class="card p-3 shadow border-radius-20 aa">
+                <div class="text-center">
+                    <h5>Enquiry Count:</h5><br><br>
+                    <h3>{{enq_count}}</h3><br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
