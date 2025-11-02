@@ -1,0 +1,277 @@
+body{
+    padding-top: 92px;
+}
+.navbar-custom{
+    background-color: rgba(255, 255, 255, 0.6); /*backdrop filer not applying */
+    
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4); 
+     
+}
+.main-slider img{
+    height: 600px;
+}
+
+
+
+/* about us section  */
+.about-section {
+    background: rgba(255, 255, 255, 0.232); /* translucent glass look */
+    padding: 60px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.45);
+    margin: 50px auto;
+    max-width: 1000px;
+    text-align: center;
+
+    /* background image */
+    background: url("https://img.freepik.com/free-vector/hand-drawn-people-with-hot-drinks_52683-71948.jpg?semt=ais_hybrid&w=740")
+                center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* parallax effect */
+    position: relative;
+    z-index: 1;
+}
+
+/* overlay for readability */
+.about-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255, 255, 255, 0.7); /* white glass overlay */
+    border-radius: 12px;
+    z-index: -1;
+}
+
+/* Headings inside */
+.about-section h1,
+.about-section h2 {
+    color: #222;
+    font-weight: 600;
+}
+
+/* Paragraph text */
+.about-section p {
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* optional button style */
+.about-section button {
+    border-radius: 30px;
+    padding: 10px 25px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+}
+
+.about-section button:hover {
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+}
+
+
+
+/* contact section  */
+/* Contact Page Section */
+.contact-section {
+    background: rgba(255, 255, 255, 0.232); /* translucent white */
+    padding: 50px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.45);
+    margin: 50px auto;
+    max-width: 1000px;
+
+    /* background image */
+    background: url("https://www.shutterstock.com/image-vector/woman-turns-support-service-customer-600nw-1986378524.jpg") 
+                center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* parallax effect */
+    position: relative;
+    z-index: 1;
+}
+
+/* overlay to improve readability */
+.contact-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    /* backdrop-filter: blur(8px); */
+    /* -webkit-backdrop-filter: blur(8px); */
+    border-radius: 12px;
+    z-index: -1;
+}
+
+/* Headings inside */
+.contact-section h1,
+.contact-section h2 {
+    color: #222;
+    font-weight: 600;
+}
+
+/* form controls */
+.contact-section .form-control {
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.4);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* buttons */
+.contact-section button {
+    border-radius: 30px;
+    padding: 10px 25px;
+}
+
+
+/* Registration Page Styles */
+/* Full page background */
+.register-page {
+    position: relative;
+    height: 100vh;
+    background: url("https://media.gettyimages.com/id/157747680/video/register-now-symbol-animation.jpg?s=640x640&k=20&c=Nkw1G7hkqxAf6spN4yIOjimVZviHLs27WIwSWJO-6pU=") no-repeat center center/cover;
+    background-attachment: fixed;
+}
+
+/* Dark overlay for contrast */
+.register-page .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55); /* translucent dark overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Registration form card */
+.register-card {
+    background: rgba(255,255,255,0.1); 
+    /* backdrop-filter: blur(12px); glassmorphism effect */
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 30px;
+    border-radius: 12px;
+    color: white;
+}
+
+/* Input styling */
+.register-card input {
+    background: rgba(255,255,255,0.8);
+    border: none;
+}
+
+/* login styinglin  */
+/* Full background for contact/login page */
+.contact-page {
+    position: relative;
+    min-height: 100vh;
+    background: url("https://onaircode.com/wp-content/uploads/2017/09/Panda-Login-Form-1.jpg") no-repeat center center/cover;
+    background-attachment: fixed;
+}
+
+/* Overlay to darken bg for readability */
+.contact-page .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Contact/Login form card */
+.contact-card {
+    background: rgba(255, 255, 255, 0.1);
+    /* backdrop-filter: blur(12px); */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 30px;
+    border-radius: 12px;
+    color: white;
+}
+
+/* Inputs inside the card */
+.contact-card input {
+    background: rgba(255,255,255,0.85);
+    border: none;
+}
+
+/* footer  */
+/* =======================
+   GLASSY FOOTER
+========================= */
+footer {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px 0;
+  overflow: hidden;
+
+  /* Background image with fixed effect */
+  background: url("https://64.media.tumblr.com/tumblr_lp0f2fIhnF1qa2ip8o1_1280.gif") 
+              center no-repeat fixed;
+  background-size: cover;
+}
+
+/* Dark translucent glass overlay */
+footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75); /* dark glass effect */
+  z-index: 0;
+}
+
+/* Ensure content stays above overlay */
+footer * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Footer links */
+footer a {
+  color: #0d6efd;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #66b3ff;
+}
+
+/* Glass bar at bottom (for copyright) */
+.glass-bar {
+  margin-top: 30px;
+  padding: 15px 0;
+  background: rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ddd;
+  font-size: 14px;
+}
+
+.img-wrapper {
+    width: 320px;
+    height: 150px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgforhome {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
